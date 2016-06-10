@@ -1,0 +1,34 @@
+{
+  "name": "map-my-module",
+  "version": "0.0.1",
+  "description": "A seed for building NPM packages with Typescript",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "scratch": "./bin/cli.js"
+  },
+  "scripts": {
+    "pretest": "gulp compile && gulp lint && rm -rf ./coverage",
+    "test": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha",
+    "prepublish": "gulp compile",
+    "watch": "gulp watch",
+    "build": "gulp compile"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Jon Winton",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "fs-jetpack": "^0.9.1",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.1",
+    "gulp-tsc": "^1.1.5",
+    "gulp-tslint": "^5.0.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.4",
+    "yargs": "^4.7.1"
+  }
+}
