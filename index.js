@@ -4,7 +4,7 @@ const yargs = require('yargs');
 
 yargs.usage('Usage: $0 [command]')
   .wrap(Math.min(200))
-  .command('batch', 'Run a batch of commands', function() {
+  .command('womp', 'Run a batch of commands', function() {
     console.log('womp');
   })
   .help('h')

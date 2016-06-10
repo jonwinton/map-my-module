@@ -5,7 +5,7 @@
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "scratch": "./bin/cli.js"
+    "mmm": "./bin/cli.js"
   },
   "scripts": {
     "pretest": "rm -rf ./coverage",
