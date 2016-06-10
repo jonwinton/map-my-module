@@ -2,7 +2,7 @@
 const glob = require('glob'),
   chai = require('chai'),
   path = require('path'),
-  tests = glob.sync([__dirname, '..', 'src', '**', '*.test.ts'].join(path.sep));
+  tests = glob.sync([__dirname, '..', '**', '*.test.js'].join(path.sep));
 
 // defaults for chai
 chai.config.showDiff = true;

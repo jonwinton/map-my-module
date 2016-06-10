@@ -8,15 +8,10 @@
     "scratch": "./bin/cli.js"
   },
   "scripts": {
-    "pretest": "gulp compile && gulp lint && rm -rf ./coverage",
-    "test": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha",
-    "prepublish": "gulp compile",
-    "watch": "gulp watch",
-    "build": "gulp compile"
+    "pretest": "rm -rf ./coverage",
+    "test": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha"
   },
-  "keywords": [
-    "typescript"
-  ],
+  "keywords": [],
   "author": "Jon Winton",
   "license": "ISC",
   "devDependencies": {
