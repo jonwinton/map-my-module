@@ -1,7 +1,7 @@
 {
   "name": "map-my-module",
   "version": "0.0.1",
-  "description": "A seed for building NPM packages with Typescript",
+  "description": "A module to map dependencies",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
@@ -25,5 +25,8 @@
     "mocha": "^2.4.5",
     "sinon": "^1.17.4",
     "yargs": "^4.7.1"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
   }
 }

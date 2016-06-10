@@ -1,19 +1,25 @@
 'use strict';
 
-const yargs = require('yargs');
+var program = require('commander');
 
-yargs.usage('Usage: $0 [command]')
-  .wrap(Math.min(200))
-  .command('womp', 'Run a batch of commands', function() {
-    console.log('womp');
-  })
-  .help('h')
-  .version(function() {
-    return require('./package.json').version;
-  })
-  .showHelpOnFail(false, 'Specify --help for available options')
-  .alias('h', 'help')
-  .demand(1);
+program
+  .version('0.0.1')
+  .option('-p, --peppers', 'Add peppers')
+  .option('-P, --pineapple', 'Add pineapple')
+  .option('-b, --bbq-sauce', 'Add bbq sauce')
+  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble');
 
-yargs.help();
+program
+   .command('setup')
+   .description('run remote setup commands')
+   .action(require('./cmd/test'));
 
+
+// console.log('you ordered a pizza with:');
+// if (program.peppers) console.log('  - peppers');
+// if (program.pineapple) console.log('  - pineapple');
+// if (program.bbqSauce) console.log('  - bbq');
+// console.log('  - %s cheese', program.cheese);
+
+
+program.parse(process.argv);
