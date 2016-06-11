@@ -1,6 +1,7 @@
 'use strict';
 
 var program = require('commander');
+var commands = require('./cmd')(program);
 
 program
   .version('0.0.1')
@@ -8,18 +9,6 @@ program
   .option('-P, --pineapple', 'Add pineapple')
   .option('-b, --bbq-sauce', 'Add bbq sauce')
   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble');
-
-program
-   .command('setup')
-   .description('run remote setup commands')
-   .action(require('./cmd/test'));
-
-
-// console.log('you ordered a pizza with:');
-// if (program.peppers) console.log('  - peppers');
-// if (program.pineapple) console.log('  - pineapple');
-// if (program.bbqSauce) console.log('  - bbq');
-// console.log('  - %s cheese', program.cheese);
 
 
 program.parse(process.argv);
