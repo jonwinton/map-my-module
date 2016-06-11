@@ -1,14 +1,20 @@
 'use strict';
 
 var program = require('commander');
-var commands = require('./cmd')(program);
+var packageJson = require('./package.json');
+
+// Load commands from the `cmd` directory
+require('./cmd')(program);
+
 
 program
-  .version('0.0.1')
-  .option('-p, --peppers', 'Add peppers')
-  .option('-P, --pineapple', 'Add pineapple')
-  .option('-b, --bbq-sauce', 'Add bbq sauce')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble');
+  .version(packageJson.version)
+  .usage('<command> [options]')
+  .option('-d, --debug', 'show debug info');
 
+program.on('*', function() {
+  console.log('Unknown Command: ' + program.args.join(' '));
+  program.help();
+});
 
 program.parse(process.argv);
