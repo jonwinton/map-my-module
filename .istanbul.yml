@@ -2,7 +2,7 @@ verbose: false
 instrumentation:
     root: .
     default-excludes: true
-    excludes: ['gulpfile.js', 'index.js']
+    excludes: ['gulpfile.js', 'index.js', './bin/cli.js']
     embed-source: false
     variable: __coverage__
     compact: true
