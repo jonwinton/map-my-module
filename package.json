@@ -11,7 +11,8 @@
     "pretest": "rm -rf ./coverage",
     "test": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha",
     "cover": "open coverage/lcov-report/index.html",
-    "bug": "node --debug-brk  bin/cli.js map -f ~/Desktop/testrepo/file.js"
+    "bug": "node --debug-brk  bin/cli.js map -f ~/Desktop/testrepo/file.js",
+    "womp": "node bin/cli.js map -f ~/Desktop/testrepo/file.js"
   },
   "keywords": [],
   "author": "Jon Winton",
